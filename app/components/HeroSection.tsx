@@ -29,12 +29,12 @@ export default function HeroSection() {
         </div>
 
         {/* Image Container - Order changed for mobile */}
-        <div className="relative order-1 lg:order-2 max-w-xs mx-auto lg:max-w-none">
+        <div className="relative order-1 lg:order-2 flex justify-center">
           <div className="aspect-square rounded-full bg-gradient-to-tr from-primary to-primary/20 overflow-hidden border-4 border-primary/20">
             <img
               src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80"
               alt="Profile"
-              className="w-full h-full object-cover mix-blend-multiply scale-105"
+              className="w-40 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-cover mix-blend-multiply scale-105"
             />
           </div>
         </div>
