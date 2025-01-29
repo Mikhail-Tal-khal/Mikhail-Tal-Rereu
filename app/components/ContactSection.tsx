@@ -8,7 +8,7 @@ export default function ContactSection() {
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+      {/* <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2> */}
       <div className="flex justify-center space-x-6">
         {/* WhatsApp Button */}
         <Button variant="outline" size="icon" asChild>

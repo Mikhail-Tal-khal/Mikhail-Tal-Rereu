@@ -5,7 +5,6 @@ import Navbar from "@/app/components/Navbar";
 import HeroSection from "@/app/components/HeroSection";
 import SkillsSection from "@/app/components/SkillsSection";
 import ProjectsSection from "@/app/components/ProjectsSection";
-import ContactSection from "@/app/components/ContactSection";
 import FooterSection from "@/app/components/FooterSection";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 
@@ -19,7 +18,6 @@ export default function Home() {
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />
-      <ContactSection />
       <FooterSection />
       <WhatsAppButton />
     </main>
