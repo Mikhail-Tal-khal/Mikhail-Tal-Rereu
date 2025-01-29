@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Twitter } from "lucide-react";
-import { FaWhatsapp, FaInstagram, FaSignal } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaSignalMessenger } from "react-icons/fa6";
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
   const [greeting, setGreeting] = useState("");
   const phoneNumber = "+254768871004";
+  const signalPhoneNumber = "+254701506538";
+
 
   useEffect(() => {
     setMounted(true);
@@ -38,7 +41,7 @@ export default function HeroSection() {
   const encodedMessage = encodeURIComponent(baseMessage);
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-  const signalLink = `https://signal.me/#p/${phoneNumber}`;
+  const signalLink = `https://signal.me/#eu/dZABsdD-ve2KGYxcPg5mHjwqjmyCCMh9CaQhGQKx87AWYrZ5KLdP56eMZA4oi41V/${signalPhoneNumber}`;
 
   return (
     <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -87,7 +90,7 @@ export default function HeroSection() {
               <FaInstagram className="w-8 h-8 text-pink-500 hover:text-pink-600 transition-colors" />
             </a>
             <a href={signalLink} target="_blank" rel="noopener noreferrer">
-              <FaSignal className="w-8 h-8 text-blue-500 hover:text-blue-600 transition-colors" />
+              <FaSignalMessenger className="w-8 h-8 text-blue-500 hover:text-blue-600 transition-colors" />
             </a>
           </div>
         </div>
