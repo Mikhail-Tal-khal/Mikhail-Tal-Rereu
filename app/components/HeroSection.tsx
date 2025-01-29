@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
-import { FaSignalMessenger } from "react-icons/fa6";
+import { FaSignalMessenger, FaGithub } from "react-icons/fa6";
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
@@ -75,13 +75,7 @@ export default function HeroSection() {
           {/* Social Media & Messaging Buttons */}
           <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
             <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
-              <Github className="w-8 h-8 text-black hover:text-gray-700 transition-colors" />
-            </a>
-            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-8 h-8 text-blue-600 hover:text-blue-700 transition-colors" />
-            </a>
-            <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer">
-              <Twitter className="w-8 h-8 text-blue-400 hover:text-blue-500 transition-colors" />
+              <FaGithub className="w-8 h-8 text-black hover:text-gray-700 transition-colors" />
             </a>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <FaWhatsapp className="w-8 h-8 text-green-500 hover:text-green-600 transition-colors" />

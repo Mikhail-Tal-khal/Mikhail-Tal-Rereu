@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ThemeProvider } from "@/components/theme-provider";
+import 'devicon/devicon.min.css';
 
 const inter = localFont({
   src: '../public/fonts/inter-var.woff2',
