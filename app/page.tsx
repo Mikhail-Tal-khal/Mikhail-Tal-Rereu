@@ -7,6 +7,8 @@ import SkillsSection from "@/app/components/SkillsSection";
 import ProjectsSection from "@/app/components/ProjectsSection";
 import ContactSection from "@/app/components/ContactSection";
 import FooterSection from "@/app/components/FooterSection";
+import WhatsAppButton from "@/app/components/WhatsAppButton";
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
@@ -19,6 +21,7 @@ export default function Home() {
       <ProjectsSection />
       <ContactSection />
       <FooterSection />
+      <WhatsAppButton />
     </main>
   );
 }
