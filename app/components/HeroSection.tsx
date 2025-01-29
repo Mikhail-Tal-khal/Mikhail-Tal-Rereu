@@ -1,8 +1,45 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Twitter } from "lucide-react";
-import { FaWhatsapp, FaInstagram, FaSignal } from "react-icons/fa"; // Import colorful icons
+import { FaWhatsapp, FaInstagram, FaSignal } from "react-icons/fa";
 
 export default function HeroSection() {
+  const [mounted, setMounted] = useState(false);
+  const [greeting, setGreeting] = useState("");
+  const phoneNumber = "+254768871004";
+
+  useEffect(() => {
+    setMounted(true);
+
+    const updateGreeting = () => {
+      const now = new Date();
+      const hours = now.getHours();
+      let newGreeting = "Hello";
+
+      if (hours >= 5 && hours < 12) {
+        newGreeting = "Good Morning☀️";
+      } else if (hours >= 12 && hours < 17) {
+        newGreeting = "Good Afternoon🌤";
+      } else {
+        newGreeting = "Good Evening🌙";
+      }
+
+      setGreeting(newGreeting);
+    };
+
+    updateGreeting();
+    const interval = setInterval(updateGreeting, 1000 * 60);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!mounted) return null;
+
+  const baseMessage = `${greeting} Rereu,\n\nI want to get this project done. Let's discuss!`;
+  const encodedMessage = encodeURIComponent(baseMessage);
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const signalLink = `https://signal.me/#p/${phoneNumber}`;
+
   return (
     <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -32,7 +69,7 @@ export default function HeroSection() {
             </Button>
           </div>
 
-          {/* Social Media Icons */}
+          {/* Social Media & Messaging Buttons */}
           <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
             <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
               <Github className="w-8 h-8 text-black hover:text-gray-700 transition-colors" />
@@ -43,13 +80,13 @@ export default function HeroSection() {
             <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer">
               <Twitter className="w-8 h-8 text-blue-400 hover:text-blue-500 transition-colors" />
             </a>
-            <a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <FaWhatsapp className="w-8 h-8 text-green-500 hover:text-green-600 transition-colors" />
             </a>
             <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer">
               <FaInstagram className="w-8 h-8 text-pink-500 hover:text-pink-600 transition-colors" />
             </a>
-            <a href="https://signal.org/install/" target="_blank" rel="noopener noreferrer">
+            <a href={signalLink} target="_blank" rel="noopener noreferrer">
               <FaSignal className="w-8 h-8 text-blue-500 hover:text-blue-600 transition-colors" />
             </a>
           </div>
