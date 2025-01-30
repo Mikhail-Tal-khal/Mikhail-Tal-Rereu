@@ -1,3 +1,4 @@
+// app/layout.tsx
 import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
@@ -31,10 +32,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="pt-16 pb-16 min-h-screen"> {/* Added bottom padding for footer */}
+          <main className="pt-1 pb-4 min-h-screen"> {/* Increased bottom padding */}
             {children}
           </main>
-          <FooterSection />
+          <FooterSection className="h-[max-content] bottom-0 w-full" />
         </ThemeProvider>
       </body>
     </html>
