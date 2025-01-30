@@ -4,8 +4,6 @@ import { useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import HeroSection from "@/app/components/HeroSection";
 import SkillsSection from "@/app/components/SkillsSection";
-import ProjectsSection from "@/app/components/ProjectsSection";
-import FooterSection from "@/app/components/FooterSection";
 import WhatsAppButton from "@/app/components/WhatsAppButton";
 
 
@@ -14,11 +12,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-background to-secondary">
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      <Navbar/>
       <HeroSection />
       <SkillsSection />
-      <ProjectsSection />
-      <FooterSection />
       <WhatsAppButton />
     </main>
   );

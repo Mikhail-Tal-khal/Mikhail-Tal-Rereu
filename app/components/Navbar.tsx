@@ -3,35 +3,40 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function Navbar({
-  activeSection,
-  setActiveSection,
-}: {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}) {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const menuItems = ["home", "about", "projects", "contact"];
+  const pathname = usePathname();
+
+  const menuItems = [
+    { name: "home", path: "/" },
+    { name: "about", path: "/about" },
+    { name: "projects", path: "/projects" },
+    { name: "contact", path: "/contact" },
+  ];
 
   return (
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-sm z-50 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <span className="text-2xl font-bold">Mikhal-Tal Rereu</span>
+          <Link href="/" className="text-2xl font-bold hover:opacity-80 transition-opacity">
+            Mikhal-Tal Rereu
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
             {menuItems.map((item) => (
-              <button
-                key={item}
-                onClick={() => setActiveSection(item)}
+              <Link
+                key={item.path}
+                href={item.path}
                 className={`capitalize ${
-                  activeSection === item ? "text-primary font-medium" : "text-muted-foreground"
-                }`}
+                  pathname === item.path ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
+                } transition-colors`}
               >
-                {item}
-              </button>
+                {item.name}
+              </Link>
             ))}
             <ThemeToggle />
           </div>
@@ -42,6 +47,7 @@ export default function Navbar({
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg hover:bg-secondary"
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -53,18 +59,18 @@ export default function Navbar({
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
               {menuItems.map((item) => (
-                <button
-                  key={item}
-                  onClick={() => {
-                    setActiveSection(item);
-                    setMobileMenuOpen(false);
-                  }}
-                  className={`capitalize ${
-                    activeSection === item ? "text-primary font-medium" : "text-muted-foreground"
-                  }`}
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`capitalize px-4 py-2 ${
+                    pathname === item.path 
+                      ? "text-primary font-medium bg-primary/10" 
+                      : "text-muted-foreground hover:bg-accent"
+                  } rounded-md transition-colors`}
                 >
-                  {item}
-                </button>
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>

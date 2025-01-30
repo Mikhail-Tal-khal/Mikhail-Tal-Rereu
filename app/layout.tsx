@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/app/components/Navbar";
+import FooterSection from "@/app/components/FooterSection";
 import 'devicon/devicon.min.css';
 
 const inter = localFont({
@@ -28,7 +30,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navbar />
+          <main className="pt-16 pb-16 min-h-screen"> {/* Added bottom padding for footer */}
+            {children}
+          </main>
+          <FooterSection />
         </ThemeProvider>
       </body>
     </html>
