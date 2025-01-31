@@ -100,7 +100,7 @@ export default function HeroSection() {
             <img
               src="/images/portfolio/RereuPassport.jpg"
               alt="Profile"
-              className="w-40 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-cover mix-blend-multiply"
+              className="w-40 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto"
             />
           </div>
         </div>
