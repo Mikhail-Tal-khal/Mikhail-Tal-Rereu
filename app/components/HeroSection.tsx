@@ -72,7 +72,7 @@ export default function HeroSection() {
           {/* Social Media & Messaging Buttons */}
           <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
             <a
-              href="https://github.com/your-profile"
+              href="https://github.com/Mikhail-Tal-khal"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -98,9 +98,9 @@ export default function HeroSection() {
         <div className="relative order-1 lg:order-2 flex justify-center">
           <div className="aspect-square rounded-full bg-gradient-to-tr from-primary to-primary/20 overflow-hidden border-4 border-primary/20">
             <img
-              src="/images/portfolio/Logo.jpg"
+              src="/images/portfolio/RereuPassport.jpg"
               alt="Profile"
-              className="w-40 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-cover mix-blend-multiply scale-105"
+              className="w-40 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-cover mix-blend-multiply"
             />
           </div>
         </div>
