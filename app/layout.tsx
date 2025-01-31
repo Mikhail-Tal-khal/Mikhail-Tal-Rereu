@@ -13,7 +13,8 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Mikhal-Tal Rereu - Software Engineer',
+  icons: '/images/portfolio/strategy.png',
+  title: 'Rereu Lemein - Software Engineer',
   description: 'Personal portfolio of Mikhal-Tal Rereu, a software engineer specializing in Flutter development, AI, and computer vision.',
 };
 

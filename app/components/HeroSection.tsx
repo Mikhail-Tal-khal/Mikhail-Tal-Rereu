@@ -48,7 +48,7 @@ export default function HeroSection() {
         {/* Text Content */}
         <div className="order-2 lg:order-1 mt-8 lg:mt-0">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-            Hi, I'm <span className="text-primary">Mikhal-Tal Rereu</span>
+            Hi, I'm <span className="text-primary">Rereu Lemein</span>
             <br />
             Software Engineer
           </h1>
