@@ -10,7 +10,6 @@ export default function HeroSection() {
   const phoneNumber = "+254768871004";
   const signalPhoneNumber = "+254701506538";
 
-
   useEffect(() => {
     setMounted(true);
 
@@ -54,10 +53,8 @@ export default function HeroSection() {
             Software Engineer
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-8">
-            Specialized in Flutter development, AI solutions, and computer
-            vision applications. Passionate about creating innovative
-            cross-platform applications and implementing cutting-edge AI
-            technologies.
+            Turning caffeine into code and ideas into apps that spark joy. Let’s
+            solve puzzles and build things that feel alive.
           </p>
 
           {/* Call-to-action buttons */}
@@ -74,13 +71,21 @@ export default function HeroSection() {
 
           {/* Social Media & Messaging Buttons */}
           <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
-            <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaGithub className="w-8 h-8 text-black hover:text-gray-700 transition-colors" />
             </a>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <FaWhatsapp className="w-8 h-8 text-green-500 hover:text-green-600 transition-colors" />
             </a>
-            <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://instagram.com/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram className="w-8 h-8 text-pink-500 hover:text-pink-600 transition-colors" />
             </a>
             <a href={signalLink} target="_blank" rel="noopener noreferrer">
