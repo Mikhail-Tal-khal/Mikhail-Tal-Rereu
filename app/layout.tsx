@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ThemeProvider } from "@/components/theme-provider";
+import { Space_Mono } from 'next/font/google'
 import Navbar from "@/app/components/Navbar";
 import FooterSection from "@/app/components/FooterSection";
 import { Analytics } from "@vercel/analytics/react"
@@ -13,6 +14,12 @@ const inter = localFont({
   src: '../public/fonts/inter-var.woff2',
   variable: '--font-inter',
 });
+
+const spaceMono = Space_Mono({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   icons: '/images/portfolio/strategy.png',
@@ -26,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning >
       <body className={`${inter.variable} font-sans`}>
         <ThemeProvider
           attribute="class"
