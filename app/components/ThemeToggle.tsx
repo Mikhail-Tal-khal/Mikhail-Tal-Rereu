@@ -9,8 +9,10 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    // Force light theme on initial load
-    if (!theme) setTheme("light");
+    // Force light theme on initial load if no theme exists
+    if (!theme) {
+      setTheme("light");
+    }
   }, [setTheme, theme]);
 
   if (!mounted) {
