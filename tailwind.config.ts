@@ -23,6 +23,7 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        // Existing color definitions
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -62,6 +63,14 @@ const config: Config = {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
+        },
+        // New off-white palette
+        offwhite: {
+          DEFAULT: '#F5F5E6',
+          100: '#fafaf0',
+          200: '#f5f5e6',
+          300: '#f0f0dc',
+          400: '#ebebd2',
         },
       },
       keyframes: {
