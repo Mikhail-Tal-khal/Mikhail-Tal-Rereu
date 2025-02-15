@@ -3,7 +3,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ThemeProvider } from "@/components/theme-provider";
-import { Space_Mono } from 'next/font/google'
 import Navbar from "@/app/components/Navbar";
 import FooterSection from "@/app/components/FooterSection";
 import { Analytics } from "@vercel/analytics/react"
@@ -15,11 +14,7 @@ const inter = localFont({
   variable: '--font-inter',
 });
 
-const spaceMono = Space_Mono({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-})
+
 
 export const metadata: Metadata = {
   icons: '/images/portfolio/strategy.png',

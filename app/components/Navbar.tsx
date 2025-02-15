@@ -5,6 +5,13 @@ import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Great_Vibes } from "next/font/google";
+
+const greatVibes = Great_Vibes({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,7 +29,10 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-sm z-50 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <Link href="/" className="text-2xl font-bold hover:opacity-80 transition-opacity">
+          <Link
+            href="/"
+            className={`${greatVibes.className} text-3xl font-bold hover:opacity-80 transition-opacity tracking-wide`}
+          >
             Rereu Lemein
           </Link>
 
@@ -33,7 +43,9 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 className={`capitalize ${
-                  pathname === item.path ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
+                  pathname === item.path
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground"
                 } transition-colors`}
               >
                 {item.name}
@@ -50,7 +62,11 @@ export default function Navbar() {
               className="p-2 rounded-lg hover:bg-secondary"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -65,8 +81,8 @@ export default function Navbar() {
                   href={item.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`capitalize px-4 py-2 ${
-                    pathname === item.path 
-                      ? "text-primary font-medium bg-primary/10" 
+                    pathname === item.path
+                      ? "text-primary font-medium bg-primary/10"
                       : "text-muted-foreground hover:bg-accent"
                   } rounded-md transition-colors`}
                 >
@@ -81,6 +97,4 @@ export default function Navbar() {
   );
 }
 
-
-
-// 
+//
