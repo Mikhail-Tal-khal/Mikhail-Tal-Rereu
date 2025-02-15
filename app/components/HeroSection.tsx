@@ -48,7 +48,10 @@ export default function HeroSection() {
         {/* Text Content */}
         <div className="order-2 lg:order-1 mt-8 lg:mt-0">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-            Hi, I'm <span className="text-primary">Rereu Lemein</span>
+            Hi, I'm{" "}
+            <span className="inline-block bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
+              Rereu Lemein
+            </span>
             <br />
             Software Engineer
           </h1>
