@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter } from "lucide-react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FaSignalMessenger, FaGithub } from "react-icons/fa6";
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
   const [greeting, setGreeting] = useState("");
+  const [timeDay, setTimeDay] = useState("");
   const phoneNumber = "+254768871004";
   const signalPhoneNumber = "+254701506538";
 
   useEffect(() => {
     setMounted(true);
 
-    const updateGreeting = () => {
+    const updateDateTime = () => {
       const now = new Date();
       const hours = now.getHours();
+      
+      // Set greeting
       let newGreeting = "Hello";
-
       if (hours >= 5 && hours < 12) {
         newGreeting = "Good Morning☀️";
       } else if (hours >= 12 && hours < 17) {
@@ -25,12 +26,33 @@ export default function HeroSection() {
       } else {
         newGreeting = "Good Evening🌙";
       }
-
       setGreeting(newGreeting);
+
+      // Set time and day with seconds
+      try {
+        const timeOptions = { 
+          hour: "numeric",
+          minute: "2-digit",
+          second: "2-digit", // Added seconds here
+          hour12: true
+        } as const;
+
+        const dateOptions = {
+          weekday: "long"
+        } as const;
+
+        const timeString = now.toLocaleTimeString("en-US", timeOptions);
+        const dayString = now.toLocaleDateString("en-US", dateOptions);
+        
+        setTimeDay(`${timeString} · ${dayString}`);
+      } catch (error) {
+        console.error("Error formatting time/date:", error);
+        setTimeDay("Loading time...");
+      }
     };
 
-    updateGreeting();
-    const interval = setInterval(updateGreeting, 1000 * 60);
+    updateDateTime();
+    const interval = setInterval(updateDateTime, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -47,6 +69,13 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Text Content */}
         <div className="order-2 lg:order-1 mt-8 lg:mt-0">
+          {/* Date and Time */}
+          <div className="mb-6 text-xl sm:text-2xl text-muted-foreground">
+            <span className="font-medium">{greeting}</span>
+            <span className="mx-2">·</span>
+            <span>{timeDay || "Loading time..."}</span>
+          </div>
+
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">
             Hi, I'm{" "}
             <span className="inline-block bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
@@ -55,12 +84,12 @@ export default function HeroSection() {
             <br />
             Software Engineer
           </h1>
+
           <p className="text-lg sm:text-xl text-muted-foreground mb-8">
             Turning caffeine into code and ideas into apps that spark joy. Let’s
             solve puzzles and build things that feel alive.
           </p>
 
-          {/* Call-to-action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Button asChild className="w-full sm:w-auto">
               <a href="/document-cv/rereu-lemein-khaled.pdf" download>
@@ -72,7 +101,6 @@ export default function HeroSection() {
             </Button>
           </div>
 
-          {/* Social Media & Messaging Buttons */}
           <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
             <a
               href="https://github.com/Mikhail-Tal-khal"
@@ -97,7 +125,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Image Container */}
         <div className="relative order-1 lg:order-2 flex justify-center">
           <div className="aspect-square rounded-full bg-gradient-to-tr from-primary to-primary/20 overflow-hidden border-4 border-primary/20">
             <img

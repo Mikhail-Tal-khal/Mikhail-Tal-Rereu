@@ -5,6 +5,8 @@ import localFont from 'next/font/local';
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/app/components/Navbar";
 import FooterSection from "@/app/components/FooterSection";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'devicon/devicon.min.css';
 
 const inter = localFont({
@@ -33,6 +35,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <Analytics />
+          <SpeedInsights />
           <main className="pt-1 pb-4 min-h-screen"> {/* Increased bottom padding */}
             {children}
           </main>
