@@ -25,6 +25,9 @@ const config: Config = {
       },
       colors: {
         // Existing color definitions
+        'mpesa-green': '#00B300',
+        'paypal-blue': '#003087',
+        'payoneer-blue': '#FF4800',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
