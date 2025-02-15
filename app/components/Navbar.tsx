@@ -12,9 +12,10 @@ export default function Navbar() {
 
   const menuItems = [
     { name: "home", path: "/" },
-    { name: "about", path: "/about" },
     { name: "projects", path: "/projects" },
-    { name: "contact", path: "/contact" },
+    { name: "Experience", path: "/Experience" },
+    { name: "Blog", path: "/Blog" },
+    { name: "Links", path: "/Links" },
   ];
 
   return (

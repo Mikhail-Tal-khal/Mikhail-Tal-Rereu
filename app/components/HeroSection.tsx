@@ -97,7 +97,7 @@ export default function HeroSection() {
               </a>
             </Button>
             <Button variant="outline" className="w-full sm:w-auto">
-              Contact Me
+              Experience
             </Button>
           </div>
 
