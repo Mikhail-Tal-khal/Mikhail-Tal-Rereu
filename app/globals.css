@@ -83,6 +83,11 @@
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-var.woff2') format('woff2');
+}
+
 @layer base {
   * {
     @apply border-border;

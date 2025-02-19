@@ -13,6 +13,7 @@ const greatVibes = Great_Vibes({
   display: "swap",
 });
 
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -21,7 +22,7 @@ export default function Navbar() {
     { name: "home", path: "/" },
     { name: "projects", path: "/projects" },
     { name: "Experience", path: "/Experience" },
-    { name: "Blog", path: "/Blog" },
+    { name: "blog", path: "/blog" },
     { name: "Links", path: "/Links" },
   ];
 
@@ -96,5 +97,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-//
